@@ -1,0 +1,29 @@
+/**index.wxss**/
+.index-topbar {
+  width:750rpx;
+  height:565rpx;
+}
+.index-hot{
+	color:#ccc;
+	font-size:55rpx;
+	margin-top:2px solid #ccc !important;
+}
+.index-grids{
+border:0px solid #ccc;	
+padding:15rpx;
+}
+.index-grids-url{
+	padding:10rpx;
+	border:0px solid #ccc;	
+}
+.index-grids-img{
+border:0px solid #ccc;	
+	width:225rpx;
+	height:200rpx;
+}
+
+.index-bigimg{
+	width:730rpx;
+    height:565rpx;
+    margin:10rpx;
+}

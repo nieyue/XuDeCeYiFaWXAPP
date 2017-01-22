@@ -1,0 +1,27 @@
+<view class="page">
+  <view >
+    <image class="app-topbar" src="{{test.img}}" ></image>
+  </view>
+</view>
+
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-article">
+            <view class="weui-article__h1">测试结果分析：</view>
+            <view class="weui-article__section">
+                <view class="weui-article__title" style="color:#666;">您选择的是
+                <text style="color:red"> {{answer.name}}</text>
+
+                </view>
+                <view class="weui-article__section">
+
+                    <view class="weui-article__p" style="color:#666;">
+                   {{answer.result}}
+                    </view>
+                
+                </view>
+               
+            </view>
+        </view>
+    </view>
+</view>

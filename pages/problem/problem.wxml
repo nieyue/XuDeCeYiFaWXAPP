@@ -1,0 +1,33 @@
+<view class="page">
+  <view style="position:relative;left:0;top:0">
+    <image class="app-topbar" src="{{test.img}}" ></image>
+  </view>
+</view>
+
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-article">
+            <view class="weui-article__h1" style="color:#7d7dff">{{test.title}}</view>
+            <view class="weui-article__section">
+                <view class="weui-article__title" style="color:#ca81ff">{{problem.name}}</view>
+                <view class="weui-article__section" style="margin-top:50rpx;">
+
+                    <view class="weui-article__p">
+                    <block wx:for-items="{{problem.answerList}}" wx:for-item="answer" wx:key="{{index}}">
+                        <navigator wx:if="{{answer.type=='结果'}}" class="weui-btn" url="/pages/answer/answer?test_id={{test.test_id}}&problem_id={{problem.problem_id}}&answer_id={{answer.answer_id}}">
+                            <button  class="weui-btn" type="primary">{{answer.name}}</button>
+                        </navigator>
+
+                         <navigator  wx:if="{{answer.type=='跳转'}}" open-type="redirect" class="weui-btn" url="/pages/problem/problem?test_id={{test.test_id}}&order_number={{answer.result}}">
+                            <button  class="weui-btn" type="primary">{{answer.name}}</button>
+                        </navigator>
+
+                    </block>
+                    </view>
+                
+                </view>
+               
+            </view>
+        </view>
+    </view>
+</view>

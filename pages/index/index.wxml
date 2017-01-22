@@ -1,0 +1,79 @@
+<!--index.wxml-->
+<view class="page">
+  <view style="position:relative;left:0;top:0">
+  <navigator url="/pages/problem/problem?test_id={{testHot.test_id}}&problem_id={{testHot.problemList[0].problem_id}}" >
+    <image class="app-topbar" src="{{testHot.img}}" style="border-bottom:1px solid #ccc" ></image>
+    <view style="position:absolute;left:25rpx;top:35%;color:white;width:700rpx;font-size:45rpx;" class="app-center">{{testHot.title}}
+    </view>
+<view style="position:absolute;left:75rpx;top:60%;color:white;width:600rpx;font-size:30rpx;" class="app-center">{{testHot.problemList[0].name}}</view>
+    <view style="position:absolute;right:0;top:0;color:white;width:100rpx;height:100rpx;background-color:red;border-radius: 0 0 100rpx 100rpx;" class="app-center">Hot</view>
+  </navigator>
+  </view>
+</view>
+<!-- 热门推荐 -->
+<view class="page">
+<block wx:for-items="{{testList}}" wx:for-item="test" wx:key="{{index}}">
+
+<view class="weui-cells weui-cells_after-title">
+</view>
+
+  <view style="position:relative;left:0;top:0">
+  <navigator url="/pages/problem/problem?test_id={{test.test_id}}&problem_id={{test.problemList[0].problem_id}}" >
+    <image class="app-topbar" src="{{test.img}}" style="border-bottom:1px solid #ccc" ></image>
+    <view style="position:absolute;left:25rpx;top:35%;color:white;width:700rpx;font-size:45rpx;" class="app-center">{{test.title}}
+    </view>
+<view style="position:absolute;left:75rpx;top:60%;color:white;width:600rpx;font-size:30rpx;" class="app-center">{{test.problemList[0].name}}</view>
+    <view style="position:absolute;right:0;top:0;color:white;width:100rpx;height:100rpx;background-color:red;border-radius: 0 0 100rpx 100rpx;" class="app-center">Hot</view>
+  </navigator>
+  </view>
+
+</block>
+</view>
+<!-- 热门推荐end -->
+
+<!-- 九宫格-->
+<view class="page">
+ <view class="page__hd">
+
+          <view class="weui-loadmore weui-loadmore_line">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line ">分类推荐</view>
+      </view>
+        
+    </view>
+   <view  >
+            <block wx:for-items="{{testList}}" wx:for-item="test" wx:key="{{index}}">
+                <navigator url="/pages/list/list?test_type={{test.type}}" style="display:inline-block;position:relative;left:0;top:0">
+                    <image style="width:246rpx;height:200rpx;margin:-5rpx 3rpx;" src="{{test.img}}" ></image>
+                     <view style="position:absolute;left:0;top:70rpx;color:white;width:250rpx;font-size:45rpx;" class="app-center">{{test.type}}
+    </view>
+                </navigator>
+            </block>
+        </view>
+</view>
+<!--九宫格end -->
+<!--热门推荐 -->
+<view class="page" >
+    <view class="page__bd">
+        <view class="weui-cells weui-cells_after-title">
+        <navigator url="" class="weui-cell weui-cell_access" style="background-color:#ececff;color:red;" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">热门推荐</view>
+            </navigator>
+         <block wx:for-items="{{hotTestList}}" wx:for-item="test" wx:key="{{index}}">
+            <navigator  url="/pages/problem/problem?test_id={{test.test_id}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">{{test.title}}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+        </block>
+        </view>
+
+
+    </view>
+</view>
+<!--热门推荐end -->
+<!-- 底部 -->
+<view class="weui-footer">
+           
+            <view class="weui-footer__text">Copyright 2017 itcast Inc,All rights reserved.</view>
+        </view>
+<!-- 底部end -->
+

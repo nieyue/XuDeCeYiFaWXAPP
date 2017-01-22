@@ -1,0 +1,20 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/list/list",
+    "pages/problem/problem",
+    "pages/answer/answer",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#d23c3d",
+    "navigationBarTitleText": "测壹发",
+    "navigationBarTextStyle":"#fff"
+  },
+  "networkTimeout": {
+    "request": 15000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

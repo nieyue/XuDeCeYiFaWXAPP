@@ -1,0 +1,18 @@
+<view class="page" >
+    <view class="page__hd">
+        <view class="page__title app-center" style="color:#ccc;font-size:56rpx;">{{test_type}}</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-cells__title">选择自己喜欢的测试！</view>
+        <view class="weui-cells weui-cells_after-title">
+         <block wx:for-items="{{testList}}" wx:for-item="test" wx:key="{{index}}">
+            <navigator wx:if="{{test.type==test_type}}" url="/pages/problem/problem?test_id={{test.test_id}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">{{test.title}}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+        </block>
+        </view>
+
+
+    </view>
+</view>
